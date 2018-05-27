@@ -206,7 +206,7 @@ public class simplenotebook {
                 if (text.getText().equals(""))
                     System.exit(0);
                 else {
-                    int value = JOptionPane.showConfirmDialog(null, "是否要保存文本？",
+                    int value = JOptionPane.showConfirmDialog(null, "保存文本？",
                             "提示", JOptionPane.YES_NO_OPTION);
                     String text_ = text.getText();
                     if (value == JOptionPane.YES_OPTION)
