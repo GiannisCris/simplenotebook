@@ -37,11 +37,11 @@ import java.io.*;
 import javax.swing.*;
 public class simplenotebook {
 
-    static String path = "";
+    private static String path = "";
 
     public static void main(String[] args) {
         // 设置主窗体
-        JFrame jf = new JFrame("MyPad");
+        JFrame jf = new JFrame("lil pad");
         jf.setBounds(220, 90, 800, 600);
         jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -94,7 +94,7 @@ public class simplenotebook {
 
         // ===============设置帮助菜单=====================
         JMenu helpmenu = new JMenu("帮助(H)");
-        JMenuItem helpitem = new JMenuItem("MyPad说明(A)");
+        JMenuItem helpitem = new JMenuItem("lil pad说明(A)");
         jmbar.add(helpmenu);
         helpmenu.add(helpitem);
 
@@ -268,14 +268,14 @@ public class simplenotebook {
 
         });
 
-        // ===============实现MyPad说明功能================
+        // ===============实现lil pad说明功能================
         helpitem.addMouseListener(new MouseAdapter() {
 
             @Override
             public void mouseReleased(MouseEvent e) {
-                JOptionPane.showOptionDialog(null, "程序名称:\n MyPad \n"
+                JOptionPane.showOptionDialog(null, "程序名称:\n lil pad \n"
                                 + "程序设计:\n Java课程设计   \n" + "简介:\n 一个简单的文字编辑器\n"
-                                + " 制作:  软件工程    小Y\n" + "联系方式：******@qq.com",
+                                + " 制作:  翠翠抄老师的\n" ,
                         "关于MyPad", JOptionPane.DEFAULT_OPTION,
                         JOptionPane.INFORMATION_MESSAGE, null, null, null);
             }
@@ -283,10 +283,10 @@ public class simplenotebook {
 
     }// Main
 
-    public static void openfile(File file, JTextArea text) throws IOException {
+    private static void openfile(File file, JTextArea text) throws IOException {
 
         BufferedReader bufr = new BufferedReader(new FileReader(file));
-        String line = null;
+        String line;
         while ((line = bufr.readLine()) != null) {
             text.append(line);
             text.append("\r\n");
@@ -295,7 +295,7 @@ public class simplenotebook {
 
     }
 
-    public static void nw(JTextArea text) {
+    private static void nw(JTextArea text) {
         JFileChooser chooser = new JFileChooser();
         if (chooser.showOpenDialog(chooser) == JFileChooser.APPROVE_OPTION) {
             String path = chooser.getSelectedFile().getAbsolutePath();
@@ -308,9 +308,9 @@ public class simplenotebook {
         }
     }
 
-    public static void lsave(String text) throws IOException {
+    private static void lsave(String text) throws IOException {
         JFileChooser chooser = new JFileChooser();
-        File file = null;
+        File file;
         if (chooser.showSaveDialog(chooser) == JFileChooser.APPROVE_OPTION) {
             {
                 path = chooser.getSelectedFile().getAbsolutePath();
@@ -320,10 +320,10 @@ public class simplenotebook {
         }
     }
 
-    public static void save(String text) throws IOException {
+    private static void save(String text) throws IOException {
 
         JFileChooser chooser = new JFileChooser();
-        File file = null;
+        File file;
         if (path.equals("")) {
             if (chooser.showSaveDialog(chooser) == JFileChooser.APPROVE_OPTION) {
                 path = chooser.getSelectedFile().getAbsolutePath();
@@ -335,7 +335,7 @@ public class simplenotebook {
 
     }
 
-    public static void savefile(File file, String text) throws IOException {
+    private static void savefile(File file, String text) throws IOException {
 
         byte[] b = text.getBytes();
         if (file != null) {
