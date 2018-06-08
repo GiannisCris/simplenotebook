@@ -7,34 +7,13 @@
         package MyPad;
         */
 
-import java.awt.Event;
-import java.awt.FlowLayout;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.BufferedOutputStream;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
-
-import javax.swing.JButton;
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
-import javax.swing.KeyStroke;
-import java.awt.*;
-import java.awt.event.*;
 import java.io.*;
-import javax.swing.*;
 public class simplenotebook {
 
     private static String path = "";
@@ -105,19 +84,19 @@ public class simplenotebook {
 
         // ===============设置快捷键=====================
         newitem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N,
-                Event.CTRL_MASK));
+                InputEvent.CTRL_MASK));
         openitem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O,
-                Event.CTRL_MASK));
+                InputEvent.CTRL_MASK));
         saveitem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S,
-                Event.CTRL_MASK));
+                InputEvent.CTRL_MASK));
         cutitem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X,
-                Event.CTRL_MASK));
+                InputEvent.CTRL_MASK));
         copyitem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_C,
-                Event.CTRL_MASK));
+                InputEvent.CTRL_MASK));
         pasteitem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_V,
-                Event.CTRL_MASK));
+                InputEvent.CTRL_MASK));
         replaceitem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_H,
-                Event.CTRL_MASK));
+                InputEvent.CTRL_MASK));
 
         // ===============实现新建功能=====================
         newitem.addMouseListener(new MouseAdapter() {
