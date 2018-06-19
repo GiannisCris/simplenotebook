@@ -24,6 +24,7 @@ public class simplenotebook {
         jf.setBounds(220, 90, 800, 600);
         jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        //设置替换功能窗体
         final JFrame frame = new JFrame("替换");
         frame.setBounds(220, 90, 300, 250);
         JLabel l1 = new JLabel(" 原字符串");
@@ -43,6 +44,7 @@ public class simplenotebook {
         // 设置菜单栏
         JMenuBar jmbar = new JMenuBar();
         jf.setJMenuBar(jmbar);
+
         // ===============设置文件菜单=====================
         JMenu filemenu = new JMenu("文件(F)");
         JMenuItem newitem = new JMenuItem("新建(N)");
@@ -82,7 +84,7 @@ public class simplenotebook {
         jf.add(jsp);
         jf.setVisible(true);
 
-        // ===============设置快捷键=====================
+        // ===============设置快捷键=====================（使用setAccelerator方法）
         newitem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_N,
                 InputEvent.CTRL_MASK));
         openitem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_O,
